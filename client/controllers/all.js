@@ -1,0 +1,5 @@
+define([
+	'./mainController',
+    './carouselController',
+    './accordionController'
+]);

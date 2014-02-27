@@ -1,0 +1,25 @@
+{
+  "name": "bacon",
+  "version": "0.0.0",
+  "authors": [
+    "Vincent Barbin <git@vincentbarbin.net>"
+  ],
+  "description": "bacon test",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.12",
+    "jquery": "~2.1.0",
+    "requirejs": "~2.1.10",
+    "requirejs-domready": "~2.0.1",
+    "angular-ui": "~0.4.0",
+    "angular-ui-router": "~0.2.8",
+    "angular-bootstrap": "~0.10.0"
+  }
+}

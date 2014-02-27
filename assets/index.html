@@ -1,0 +1,48 @@
+<html>
+	<head>
+        <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="libs/bootstrap/dist/css/bootstrap.docs.css" rel="stylesheet"/>
+	    <link href="css/app.css" rel="stylesheet"/>
+    </head>
+	<body>
+        <header class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand visible-xs" href="#">UI Bootstrap</a>
+                    </div>
+                    <nav class="hidden-xs">
+                        <ul class="nav navbar-nav">
+                            <a href="#" role="button" class="navbar-brand">
+                                VincentBarbin.net
+                            </a>
+                            <li class="dropdown">
+                                <a href="#" role="button" class="dropdown-toggle">
+                                    Demos <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#accordions">Accordion</a></li><li><a href="#alert">Alert</a></li><li><a href="#buttons">Buttons</a></li><li><a href="#carousel">Carousel</a></li><li><a href="#collapse">Collapse</a></li><li><a href="#datepicker">Datepicker</a></li><li><a href="#dropdownToggle">Dropdown Toggle</a></li><li><a href="#modal">Modal</a></li><li><a href="#pagination">Pagination</a></li><li><a href="#popover">Popover</a></li><li><a href="#progressbar">Progressbar</a></li><li><a href="#rating">Rating</a></li><li><a href="#tabs">Tabs</a></li><li><a href="#timepicker">Timepicker</a></li><li><a href="#tooltip">Tooltip</a></li><li><a href="#typeahead">Typeahead</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#getting_started">Getting started</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="visible-xs collapse" collapse="!isCollapsed" style="height: 0px;">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#getting_started" ng-click="isCollapsed = !isCollapsed">Getting started</a></li>
+                            <li><a href="#directives_small" ng-click="isCollapsed = !isCollapsed">Directives</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div ui-view class="mainContent"></div>
+        <script src="/libs/requirejs/require.js" data-main="../clientMain.js"></script>
+	</body>
+</html>
