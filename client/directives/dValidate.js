@@ -23,29 +23,6 @@ define(['./module'], function(module) {
                         }
                     }
 
-                    function checkValidity(e) {
-                        $scope.$apply(function() {
-                            for (var expr in validationExpr) {
-                                var isValid = true;
-                                isValid = $scope.$eval(validationExpr[expr]);
-                                ngModel.$setValidity(expr, isValid);
-                            }
-                            ngModel.$needsAttention = ngModel.$invalid;
-                            if (form) form.$needsAttention = form.$invalid;
-                        });
-                        if (e.name != 'validate' && e.type != 'validate') {
-                            if ($form) {
-                                $form.trigger('validate');
-                            }
-                            else {
-                                $rootScope.$broadcast('validate');
-                            }
-                        }
-                        else {
-                            e.stopPropagation();
-                        }
-                    }
-
                     if ($form) {
                         $form.on('validate', checkValidity);
                     }
@@ -59,7 +36,31 @@ define(['./module'], function(module) {
                         if (!$scope.$$phase) $scope.$apply(function() {
                             ngModel.$needsAttention = false;
                         })
-                    })
+                    });
+                    
+                    function checkValidity(e) {
+                        $scope.$apply(function() {
+                            for (var expr in validationExpr) {
+                                var isValid = true;
+                                isValid = $scope.$eval(validationExpr[expr]);
+                                ngModel.$setValidity(expr, isValid);
+                            }
+                            ngModel.$needsAttention = ngModel.$invalid;
+                            if (form) form.$needsAttention = form.$invalid;
+                        });
+
+                        if (e.name != 'validate' && e.type != 'validate') {
+                            if ($form) {
+                                $form.trigger('validate');
+                            }
+                            else {
+                                $rootScope.$broadcast('validate');
+                            }
+                        }
+                        else {
+                            e.stopPropagation();
+                        }
+                    }
                 }
             }
         };
