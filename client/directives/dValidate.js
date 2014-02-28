@@ -33,7 +33,7 @@ define(['./module'], function(module) {
                     $elem.on('blur', checkValidity);
                     $elem.on('keyup', checkValidity);
                     $elem.on('focus', function() {
-                        if (!$scope.$$phase) $scope.$apply(function() {
+                        $scope.$apply(function() {
                             ngModel.$needsAttention = false;
                         })
                     });

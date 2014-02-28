@@ -1,6 +1,6 @@
 define(['jquery', 'domReady!', 'angular', 'angular-ui', 'angular-bootstrap', 'angular-ui-router', 'controllers/all', 'directives/all'],
     function($, document, angular) {
-        var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'app.controllers', 'app.directives']);
+        var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'ui.directives', 'app.controllers', 'app.directives']);
 
         app.config(function($stateProvider, $urlRouterProvider) {
             // For any unmatched url, redirect to /home

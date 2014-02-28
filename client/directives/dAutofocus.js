@@ -1,9 +1,11 @@
 define(['./module'], function(module) {
-    module.directive('dAutofocus', [function() {
+    module.directive('dAutofocus', function($timeout) {
         return {
             link: function(scope, ielem, iattr) {
-                ielem.focus();
+                $timeout(function() {
+                    ielem.focus();
+                });
             }
         };
-    }]);
+    });
 });
