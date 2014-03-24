@@ -1,34 +1,5 @@
-<form name="mainForm" role="form" novalidate>
-    <div ng-form="titleForm" ng-controller="mainController">
-        <div class="page-header">
-          <h1>Edit Movie <small>{{title}}</small></h1>
-        </div>
-        <div class="form-group has-feedback" ng-class="{'has-error': titleForm.title.$needsAttention}">
-            <label class="control-label" for="inputError1">Title</label>
-            <input name="title" type="text" class="form-control" d-autofocus d-validate="mainForm" d-validate-not-caca="isValid()" ng-required="true" ng-model="title" />
-            <span ng-show="titleForm.title.$needsAttention" class="glyphicon glyphicon-remove form-control-feedback"></span>
-        </div>
-        <div class="form-group" ng-form="actorsListForm">
-            <label class="control-label">Actors</label>
-            <div>
-                <div ng-form="actorNameForm" class="form-group has-feedback" ng-repeat="actor in actors" ng-class="{'has-error': actorNameForm.name.$needsAttention}">
-                    <label class="control-label" for="inputError1">Name</label>
-                    <input name="name" type="text" class="form-control" ng-required="true" ng-model="actor.name" d-validate="mainForm" d-validate-actor-unique="isActorUnique(actor)" d-autofocus />
-                    <span ng-show="actorNameForm.name.$needsAttention" class="glyphicon glyphicon-remove form-control-feedback"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-default" ng-click="addActor()">Add</button>
-            </div>
-        </div>
-        <div class="bs-callout bs-callout-danger" ng-show="mainForm.$needsAttention">
-            <h4>Errors</h4>
-            <p ng-show="mainForm.$error.required">All fields are required</p>
-            <p ng-show="mainForm.$error.actorUnique">Actors cannot be entered more than once</p>
-            <p ng-show="mainForm.$error.notCaca">Caca is not a valid title value</p>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary" ng-disabled="mainForm.$invalid" click="alert('saved')">Save</button>
-        </div>
-    </div>
-</form>
+<div class="jumbotron">
+    <h1>Vincent Barbin dot net</h1>
+    <p>This is a personnal home page. Nothing much to do around here ... sorry.</p>
+    <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+</div>

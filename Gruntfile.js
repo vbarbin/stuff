@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  global.grunt = grunt;
 
   // Project configuration.
   grunt.initConfig({
@@ -25,7 +26,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('server', 'run web server', function() {
-    var app = require('./service/serviceMain');
+    var app = require('./server/serviceMain');
     app.run();
   });
 

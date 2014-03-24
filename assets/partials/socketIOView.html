@@ -1,0 +1,36 @@
+<form class="form-horizontal" ng-controller="socketioController">
+  <fieldset>
+    <legend>Fake process via websockets</legend>
+    <div class="form-group">
+      <label for="processTag" class="col-lg-2 control-label">Tag</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="processTag" placeholder="Tag" ng-model="tag" d-autofocus />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="button" class="btn btn-primary" ng-click="startProcess()">Start</button>
+        <button type="button" class="btn btn-default" ng-click="stopProcess()">Stop</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Output</label>
+      <div class="col-lg-10 col-lg-offset-2">
+        <table class="table table-striped table-hover ">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="outputline in output track by $index">
+            <td>{{$index}}</td>
+            <td>{{outputline}}</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </fieldset>
+</form>

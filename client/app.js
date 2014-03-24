@@ -1,6 +1,6 @@
-define(['jquery', 'domReady!', 'angular', 'angular-ui', 'angular-bootstrap', 'angular-ui-router', 'controllers/all', 'directives/all'],
+define(['jquery', 'domReady!', 'angular', 'angular-ui', 'angular-bootstrap', 'angular-ui-router', 'services/all', 'controllers/all', 'directives/all'],
     function($, document, angular) {
-        var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'ui.directives', 'app.controllers', 'app.directives']);
+        var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'ui.directives', 'app.services', 'app.controllers', 'app.directives']);
 
         app.config(function($stateProvider, $urlRouterProvider) {
             // For any unmatched url, redirect to /home
@@ -12,14 +12,14 @@ define(['jquery', 'domReady!', 'angular', 'angular-ui', 'angular-bootstrap', 'an
                 templateUrl: "partials/mainView.html"
             });
 
-            $stateProvider.state('accordions', {
-                url: "/accordions",
-                templateUrl: "partials/accordionView.html"
+            $stateProvider.state('validation', {
+                url: "/validation",
+                templateUrl: "partials/validationView.html"
             });
 
-            $stateProvider.state('carousel', {
-                url: "/carousel",
-                templateUrl: "partials/carouselView.html"
+            $stateProvider.state('socketio', {
+                url: "/socketio",
+                templateUrl: "partials/socketIOView.html"
             });
         });
 

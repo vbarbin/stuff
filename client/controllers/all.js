@@ -1,5 +1,5 @@
 define([
 	'./mainController',
-    './carouselController',
-    './accordionController'
+    './socketioController',
+    './validationController'
 ]);
